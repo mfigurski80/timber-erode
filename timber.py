@@ -17,7 +17,7 @@ def makeHeightmap(timberMap):
     size = timberMap['Singletons']['MapSize']['Size']
     x, y = size['X'], size['Y']
     arr = timberMap['Singletons']['TerrainMap']['Heights']['Array'].split(' ')
-    return np.array(arr).astype(int).reshape(x, y)
+    return np.array(arr).astype(int).reshape(y, x)
 
 ## Write a timber map
 ## @param fname the name of the file to write
