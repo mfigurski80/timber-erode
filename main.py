@@ -1,5 +1,5 @@
 import numpy as np
-from hydro_erosion.erodeLandscape import erodeMap
+from hydro_erosion import erode
 
 
 from timber import readTimberMap, makeHeightmap
@@ -15,7 +15,7 @@ def main():
 
     lim = heightmap - 1
     print(heightmap, lim)
-    (res, _) = erodeMap(heightmap * SCALE, lim * SCALE, 1000000, 0.00001)
+    (res, _) = erode(heightmap * SCALE, lim * SCALE, 4)
     viewMapMayavi(res/SCALE)
     print(res)
 
